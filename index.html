@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
     <title>Todo List App</title>
 </head>
-<body>
-    
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-2xl bg-white rounded-lg shadow-lg p-6">
+        <h1 class="text-2xl font-bold text-center mb-6">📋 To-Do List</h1>
+        <!-- Todo Form -->
+        <form id="todoForm">
+            <label for="todo" class="block text-gray-700 text-sm font-bold mb-2">
+                Add a new todo:
+            </label>
+            <input type="text" id="todo" name="todo"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"
+                placeholder="Enter your todo here" />
+
+            <label for="dateInput" class="block text-gray-700 text-sm font-bold mb-2">
+                Input Date:
+            </label>
+            <input type="date" id="dateInput"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" />
+
+            <div class="flex justify-end mt-4">
+                <button type="submit"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Add Todo
+                </button>
+            </div>
+        </form>
+
+        <!-- Filter Section -->
+        <div class="flex justify-between items-center mt-4">
+            <span class="font-medium">Filter:</span>
+            <select id="filterSelect" class="border p-1 rounded">
+                <option value="all">All</option>
+                <option value="today">Today</option>
+                <option value="upcoming">Upcoming</option>
+            </select>
+        </div>
+
+        <!-- Todo List -->
+        <ul id="todoList" class="mt-4 space-y-3"></ul>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
+
 </html>
